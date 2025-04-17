@@ -21,9 +21,9 @@ export async function GET(request: Request) {
 
   if (paymentData.status === "approved" || paymentData.date_approved !== null) {
     // pagamentos via pix não fica com status approved
-    return NextResponse.redirect(new URL(`success`, request.url))
+    return NextResponse.redirect(new URL(`/success`, request.url))
   }
 
-  return NextResponse.redirect(new URL(`failure`, request.url))
+  return NextResponse.redirect(new URL(`/`, request.url))
 }
 
