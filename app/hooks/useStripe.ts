@@ -14,7 +14,7 @@ export function useStripe() {
 		loadStripeAsync()
 	}, [])
 
-	async function createPaymentStripeCheckout(checkoutData: any) {
+	async function createPaymentStripeCheckout(checkoutData: { testeId: string }) {
 		if (!stripe) return
 
 		try {
@@ -34,7 +34,7 @@ export function useStripe() {
 		}
 	}
 
-	async function createSubscriptionStripeCheckout(checkoutData: any) {
+	async function createSubscriptionStripeCheckout(checkoutData: { testeId: string }) {
 		if (!stripe) return
 
 		try {
@@ -61,7 +61,7 @@ export function useStripe() {
 				"Content-Type": "application/json",
 			},
 		})
-		
+
 		const data = await response.json()
 
 		window.location.href = data.url

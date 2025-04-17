@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { handleAuth } from "../actions/handle-auth";
 
 export default function Home() {
   return (
